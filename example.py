@@ -24,10 +24,10 @@ def gethtml(url):
         z = i.get('src')
         if re.findall('imgsrc.baidu.com',z):
             img = request.urlopen(z)
-            ingr = img.read()
+            imgr = img.read()
             try:
                 file = open(z[-7:],'wb')
-                file.write(ingr)
+                file.write(imgr)
                 file.close()
                 print('保存图片'+z)
             except IOError:
